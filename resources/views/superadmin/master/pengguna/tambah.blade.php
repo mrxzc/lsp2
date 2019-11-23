@@ -1,6 +1,6 @@
 @extends('layouts.superadmin')
 @section('content')
-<div class="content-body">
+<div class="content-body" style="margin-top:20px;">
     <div class="container-fluid">
         <div class="row page-titles">
             <div class="col p-md-0">
@@ -28,19 +28,20 @@
                                 @csrf
                                 <div class="form-group">
                                     <label class="text-label">Nama*</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Firman Kurniawan" required>
+                                    <input type="text" name="name" class="form-control" placeholder="Masukan Nama" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="text-label">Email*</label>
-                                    <input type="email" name="email" class="form-control" placeholder="kurniawan.firman94@gmail.com" required>
+                                    <input type="email" name="email" class="form-control" placeholder="Masukan Email" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="text-label">Password*</label>
-                                    <input type="password" name="password" class="form-control" placeholder="************" required>
+                                    <input type="password" name="password" class="form-control" placeholder="Masukan Password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="text-label">Hak Akses*</label>
                                     <select name="role" class="form-control" required>
+                                        <option value="">Pilih Hak Akses</option>
                                         <option value="2">Super Admin</option>
                                         <option value="1">Admin</option>
                                         <option value="0">Kasir</option>

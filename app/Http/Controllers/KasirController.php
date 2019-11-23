@@ -28,8 +28,8 @@ class KasirController extends Controller
             Session::put('kode_unik', rand(1111111111,9999999999));
         }
         $harga = Produk::where('id', $r->produk_id)->first();
-        // $harga->stok -= $r->jumlah;
-        // $harga->save();
+        $harga->stok -= $r->jumlah;
+        $harga->save();
     	$produk = new Cart;
     	$produk->produk_id = $r->produk_id;
     	$produk->jumlah = $r->jumlah;
@@ -41,7 +41,12 @@ class KasirController extends Controller
     }
 
     public function proses_hapus($id) {
+        
         $transaksi = Cart::find($id);
+        dd($transaksi);
+        $harga = Produk::where('id', $transaksi->produk_id)->first();
+        $harga->stok += $transaksi->jumlah;
+        $harga->save();
         $transaksi->delete();
         return redirect()->back()->with('sukses', 'Barang Berhasil Dihapus!');
     }

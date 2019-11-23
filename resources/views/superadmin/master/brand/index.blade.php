@@ -1,6 +1,6 @@
 @extends('layouts.superadmin')
 @section('content')
-<div class="content-body">
+<div class="content-body" style="margin-top:20px;">
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col p-md-0">

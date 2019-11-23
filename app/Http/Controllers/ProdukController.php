@@ -39,7 +39,7 @@ class ProdukController extends Controller
     	$produk->keterangan = $r->keterangan;
         $produk->diskon = $r->diskon;
         $produk->laba = $r->laba;
-        $produk->ppn = $r->stok_minimum;
+        $produk->ppn = $r->ppn;
 
         if($r->diskon != null){
             $diskon = $r->harga_beli * $r->diskon / '100';

@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" style="margin-top:20px;">
             <div class="col-12">
                 <div class="card forms-card">
                     <div class="card-body">
@@ -55,7 +55,7 @@
                                 <div class="form-group">
                                     <label class="text-label">Unit Produk*</label>
                                     <select name="unit_id" class="form-control" placeholder="Masukkan Unit Produk" required>
-                                        <option value="0">Pilih Unit Uang</option>
+                                        <option value="0">Pilih Unit Produk</option>
                                         @foreach($unit as $units)
                                         <option value="{{$units->id}}">{{$units->unit}}</option>
                                         @endforeach

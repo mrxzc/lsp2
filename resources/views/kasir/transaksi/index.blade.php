@@ -111,12 +111,12 @@
                 </div>
 
                 @if($message = Session::get('sukses'))
-                <div class="alert alert-primary alert-dismissible fade show">
+                <div class="alert alert-primary alert-dismissible fade show" sty>
                     <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
                     </button> <strong>{{$message}}</strong></div>
                 @endif
 
-                    <div class="col-12">
+                    <div class="col-12" style="margin-top:20px;">
                         <div class="card forms-card">
                             <div class="card-body">
                                 <h4 class="card-title mb-4">Transaksi</h4>
@@ -137,8 +137,7 @@
                                             </div>
                                                 <div><br>   
                                                     <div class="button-icon">
-                                                        <button type="submit" class="btn btn-rounded btn-info"><span class="btn-icon-left text-info"><i
-                                                class="fa fa-plus color-info"></i> </span>Add</button>
+                                                        <button type="submit" class="btn btn-rounded btn-info"><span class="flaticon-add"> </span>Add</button>
                                                     </div>
                                                 </div><br>
                                                 </form>
@@ -157,8 +156,14 @@
                 </td>
                 
                 <td>
+                   Action
+                </td>
+
+                <td>
                     Price
                 </td>
+
+                
             </tr>
             
             @foreach($cart as $carts)
@@ -169,8 +174,11 @@
                 </td>
                 
                 <td>
+                    <a href="{{route('transaksi_hapus', $carts->id)}}">Batal</a>
+                </td>
+
+                <td>
                     Rp. {{$carts->sub_total}}
-                    <a href="{{route('transaksi_hapus', $carts->id)}}"><i class="fa fa-trash-o" aria-hidden="true" title="Hapus"></i></a>
                 </td>
             </tr>
             @endforeach
@@ -178,10 +186,11 @@
 
             <tr class="total">
                 <td></td>
+                <td></td>
                 
                 @if($cart)
                 <td>
-                   Rp. {{$cart->sum('sub_total')}}
+                  <strong> Rp. {{$cart->sum('sub_total')}}  </strong>
                 </td>
                 @else
                 <td>

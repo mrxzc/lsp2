@@ -19,12 +19,12 @@
                 </div>
 
                 @if($message = Session::get('sukses'))
-                <div class="alert alert-primary alert-dismissible fade show">
+                <div class="alert alert-primary alert-dismissible fade show" style="margin-top:20px;">
                     <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
                     </button> <strong>{{$message}}</strong></div>
                 @endif
 
-                <div class="row">
+                <div class="row" style="margin-top:20px;">
                     <div class="col-xl-12">
                         <div class="col-lg-12">
                             <div class="card button-card">
@@ -32,10 +32,11 @@
                                     {{-- <h4 class="card-title card-intro-title">Button with icons</h4> --}}
                                     <center>
                                     <div class="button-icon">
-                                        <a href="{{route('unit_tambah')}}" class="btn btn-rounded btn-info"><span class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i> </span>Tambah Unit</a>
-                                        <a href="{{route('kategori_tambah')}}" class="btn btn-rounded btn-warning"><span class="btn-icon-left text-warning"><i
-                                                class="fa fa-download color-warning"></i> </span>Cetak</a>
-                                    </div>
+                                    <a href="{{route('unit_tambah')}}" class="btn btn-rounded btn-info"><span class="flaticon-add"> </span>Tambah Unit</a>
+                                        <a href="{{route('kategori_tambah')}}" class="btn btn-rounded btn-warning"><span class="flaticon-shapes"> </span>Cetak</a>
+                                       
+                                                
+                                            </div>
                                     </center>
                                 </div>
                             </div>
@@ -48,7 +49,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="example" class="display" style="min-width: 845px">
+                                <table id="datatable" class="display table table-striped table-hover" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -61,17 +62,11 @@
                                         <tr>
                                             <td>{{$units->id}}</td>
                                             <td>{{$units->unit}}</td>
-                                            <td><a href="{{route('unit_hapus', $units->id)}}"><i class="fa fa-trash-o" aria-hidden="true" title="Hapus"></i></a></td>
+                                            <td><a href="{{route('unit_hapus', $units->id)}}">Delete</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Unit</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
+                                 
                                 </table>
                                 </div>
                             </div>
