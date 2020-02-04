@@ -111,7 +111,7 @@
                 </div>
 
                 @if($message = Session::get('sukses'))
-                <div class="alert alert-primary alert-dismissible fade show">
+                <div class="alert alert-primary alert-dismissible fade show"  style="margin-top:20px;">
                     <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
                     </button> <strong>{{$message}}</strong></div>
                 @endif

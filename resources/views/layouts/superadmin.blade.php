@@ -132,11 +132,6 @@
 							<div class="collapse" id="base">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="{{route('admin')}}">
-											<span class="sub-item">Admin</span>
-										</a>
-									</li>
-									<li>
 										<a href="{{route('brand')}}">
 											<span class="sub-item">Brands</span>
 										</a>

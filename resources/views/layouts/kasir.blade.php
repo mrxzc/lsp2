@@ -92,7 +92,7 @@
 								<ul class="nav">
 								
 									<li>
-										<a href="#settings">
+										<a href="{{route('logout')}}">
 											<span class="link-collapse">Logout</span>
 										</a>
 									</li>

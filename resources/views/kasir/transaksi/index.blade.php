@@ -111,7 +111,7 @@
                 </div>
 
                 @if($message = Session::get('sukses'))
-                <div class="alert alert-primary alert-dismissible fade show" sty>
+                <div class="alert alert-primary alert-dismissible fade show"  style="margin-top:20px;">
                     <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
                     </button> <strong>{{$message}}</strong></div>
                 @endif
@@ -206,7 +206,7 @@
                             <div class="card-body">
                                 <div class="button-icon">
                                     <a href="{{route('transaksi_checkout')}}" class="btn btn-primary">Checkout<span class="btn-icon-right"><i class="fa fa-shopping-cart"></i></span></a>
-                                    <a href="{{route('transaksi_hapus_all')}}" class="btn btn-danger">Hapus Semua<span class="btn-icon-right"><i class="fa fa-close"></i></span></a>
+                                  
                                 </div>
                             </div>
                 </td>

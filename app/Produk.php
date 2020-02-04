@@ -9,7 +9,6 @@ class Produk extends Model
     public function relasikategori() {
     	return $this->belongsTo('App\Kategori', 'kategori_id');
     }
-
     public function relasimatauang() {
     	return $this->belongsTo('App\MataUang', 'mata_uang_id');
     }

@@ -1,5 +1,12 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+    @media print{
+        body * { visibility:hidden}
+        .print-area, .print-area * {visibility: visible}
+        .print-area { position:absolute; left:0; top:0;}
+    }
+</style>
 <div class="content-body">
             <div class="container-fluid">
                 <div class="row page-titles">
@@ -33,7 +40,7 @@
                                     <center>
                                     <div class="button-icon">
                                     <a href="{{route('produk_tambah')}}" class="btn btn-rounded btn-info"><span class="flaticon-add"> </span>Tambah Produk</a>
-                                        <a href="{{route('kategori_tambah')}}" class="btn btn-rounded btn-warning"><span class="flaticon-shapes"> </span>Cetak</a>
+                                        <a class="btn btn-rounded btn-warning" onclick="window.print()"><span class="flaticon-shapes"> </span>Cetak</a>
                                        
                                     </div>
                                     </center>
@@ -43,7 +50,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row print-area">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">

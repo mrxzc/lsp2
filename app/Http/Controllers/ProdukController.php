@@ -85,8 +85,10 @@ class ProdukController extends Controller
 
         if($r->diskon != null){
             $diskon = $r->harga_beli * $r->diskon / '100';
-            $persen = $diskon * ($r->laba + $r->stok_minimum) / '100';
-            $produk->harga_jual = $diskon + $persen;
+            $minus = $r->harga_beli - $diskon;
+            $persen = $minus * ($r->laba + $r->stok_minimum) / '100';
+            $produk->harga_jual = $persen + $minus;
+            
         }else{
         $persen = $r->harga_beli * ($r->laba + $r->stok_minimum) / '100';
         $produk->harga_jual = $r->harga_beli + $persen;

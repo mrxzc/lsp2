@@ -111,7 +111,7 @@
                 </div>
 
                 @if($message = Session::get('sukses'))
-                <div class="alert alert-primary alert-dismissible fade show">
+                <div class="alert alert-primary alert-dismissible fade show"  style="margin-top:20px;">
                     <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
                     </button> <strong>{{$message}}</strong></div>
                 @endif
@@ -133,37 +133,24 @@
                 </td>
                 
                 <td>
-                    Check #
+                    
                 </td>
             </tr>
             
                 <td>
-                    <div class="row mb-4">
-                        <div class="col-sm-6 col-md-4 col-xl">
-                            <div class="form-radio">
-                                <input id="radio22" checked class="radio-outlined"  name="metode" type="radio" value="cash">
-                                <label for="radio22" class="radio-red">Cash</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-xl">
-                            <div class="form-radio">
-                                <input id="radio24" class="radio-outlined"  name="metode" type="radio" value="gopay">
-                                <label for="radio24" class="radio-green">Gopay</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-xl">
-                            <div class="form-radio">
-                                <input id="radio25" class="radio-outlined"  name="metode" type="radio" value="dana">
-                                <label for="radio25" class="radio-blue">Dana</label>
-                            </div>
-                        </div>
-                    </div>
+                <select name="metode" class="form-control" required>
+                                        <option value="">Pilih Metode Pembayaran</option>
+                                        <option value="cash">Cash</option>
+                                        <option value="credit">Credit</option>
+                                        <option value="gopay">Go Pay</option>
+                                      
+                                    </select>
                 </td>
                 <!-- <td>
                     1000
                 </td> -->
             
-            <tr class="heading">
+            <tr class="heading" style="margin-top:50px;">
                 <td>
                     Item
                 </td>

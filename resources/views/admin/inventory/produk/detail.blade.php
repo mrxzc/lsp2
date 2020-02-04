@@ -19,7 +19,7 @@
         </div>
 
         @if($message = Session::get('sukses'))
-        <div class="alert alert-primary alert-dismissible fade show">
+        <div class="alert alert-primary alert-dismissible fade show" style="margin-top:20px;">
             <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
             </button> <strong>{{$message}}</strong>
         </div>
@@ -76,21 +76,21 @@
                                 <div class="form-group">
                                     <label class="text-label">Harga Jual Produk*</label>
                                     <select name="laba" class="form-control" required>
-                                        <option value="{{$produk->relasiunit->id}}">{{$produk->relasilaba->laba}}%</option>
+                                    <option value="0">Pilih Persentase Laba</option>
                                         @foreach($laba as $labas)
-                                        <option value="{{$labas->id}}">{{$labas->laba}}%</option>
+                                        <option value="{{$labas->laba}}">{{$labas->laba}}%</option>
                                         @endforeach
                                     </select>
                                     <select name="stok_minimum" class="form-control" required>
-                                        <option value="{{$produk->relasilaba->id}}">{{$produk->relasilaba->laba}}%</option>
-                                        @foreach($stok_minimum as $stok_minimums)
-                                        <option value="{{$stok_minimums->id}}">Stok Minimum: {{$stok_minimums->stok_minimum}} - PPN: {{$stok_minimums->ppn}}%</option>
+                                    <option value="0">Pilih Stok Minimum</option>
+                                         @foreach($stok_minimum as $stok_minimums)
+                                        <option value="{{$stok_minimums->ppn}}">Stok Minimum: {{$stok_minimums->stok_minimum}} - PPN: {{$stok_minimums->ppn}}%</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label class="text-label">Diskon Produk</label>
-                                    <input type="number" name="diskon" class="form-control" placeholder="Masukkan Diskon Produk" value="{{$produk->diskon}}">
+                                    <input type="number" name="diskon" class="form-control" placeholder="Masukkan Diskon Produk">
                                 </div>
                                 <div class="form-group">
                                     <label class="text-label">Keterangan Produk*</label>
